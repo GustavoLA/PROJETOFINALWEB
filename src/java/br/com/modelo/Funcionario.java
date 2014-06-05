@@ -19,6 +19,7 @@ public class Funcionario {
     private int codigo;
     private String nome;
     private String cpf;
+    
     @Temporal(TemporalType.DATE)
     private Date dataNascimento;
     
@@ -34,10 +35,6 @@ public class Funcionario {
     private String login;
     private String senha;
 
-    
-    
-    
-    
     public String getLogin() {
         return login;
     }

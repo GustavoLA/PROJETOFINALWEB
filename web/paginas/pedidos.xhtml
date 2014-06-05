@@ -1,0 +1,61 @@
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="../WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+
+    <ui:define name="conteudo">
+        <h:form acceptcharset="ISO-8859" id="form">
+
+            <p:dataTable id="tabela" var="pedido" value="#{pedidoBean.pedidos}" rows="6" paginator="true">
+                <f:facet name="header">Pedidos</f:facet>
+
+                <p:column headerText="Nome" sortBy="#{pedido.nome}" width="20%">
+                    <h:outputText value="#{pedido.nome}"/>
+                </p:column>          
+
+                <p:column headerText="Data de Entrega" sortBy="#{pedido.dataEntrega}" width="30%">
+                    <h:outputText value="#{pedido.dataEntrega}"/>
+                </p:column> 
+
+                <p:column headerText="Telefone para contato" width="30%">
+                    <h:outputText value="#{pedido.telefone}"/>
+                </p:column> 
+
+                <p:column headerText="Pedido" sortBy="#{pedido.pedido}" width="10%">
+                    <p:commandButton id="botaoSelecao" update=":formDialog:display" 
+                                     oncomplete="PF('pedidoDialog').show()" 
+                                     icon="ui-icon-search" 
+                                     title="View">
+                        <f:setPropertyActionListener value="#{pedido}" 
+                                                     target="#{pedidoBean.pedido}"/>
+                    </p:commandButton>
+                </p:column> 
+
+                <p:column>
+                    <p:commandButton action="#{pedidoBean.remove}" icon="ui-icon-closethick" update="tabela">
+                        <f:setPropertyActionListener value="#{pedido}" target="#{pedidoBean.pedido}"/>
+                    </p:commandButton>
+                </p:column>
+            </p:dataTable>
+
+        </h:form>
+
+        <p:dialog header="Detalhes" widgetVar="pedidoDialog"
+                  resizable="false" id="cargoDlg" dynamic="true" 
+                  appendTo="@(body)" showEffect="fade" hideEffect="explode" 
+                  modal="true">
+            <h:form id="formDialog">
+                <h:panelGrid id="display" columns="2" cellpadding="4"
+                             style="margin:0 auto;">
+                    <h:outputText value="Descrição: " />  
+                    <h:outputText value="#{pedidoBean.pedido.pedido}" 
+                                  style="font-weight:bold"/>  
+
+                </h:panelGrid>
+            </h:form>
+        </p:dialog>         
+    </ui:define>
+</ui:composition>

@@ -61,6 +61,12 @@ public class ControleAcessoFilter implements Filter {
     //Caso não tenha login, ele deverá autenticar não precisa de se ou senão
     // && !url.contains("teste.xhtml") -> não precisa autenticar
     private boolean precisaAutenticar(String url) {
-        return !url.contains("login.xhtml") && !url.contains("teste.xhtml") && !url.contains("javax.faces.resource");
+        return !url.contains("login.xhtml")
+                && !url.contains("pedido.xhtml")
+                && !url.contains("faq.xhtml")
+                && !url.contains("contato.xhtml")
+                && !url.contains("quemsomos.xhtml")
+                && !url.contains("index.xhtml")
+                && !url.contains("javax.faces.resource");
     }
 }

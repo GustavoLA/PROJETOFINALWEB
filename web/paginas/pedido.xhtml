@@ -1,0 +1,37 @@
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="../WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <!--PÁGINA PEDIDOS LIVRE ACESSO-->
+    <ui:define name="conteudo">
+        <h:form acceptcharset="ISO-8859-l">
+            <p:messages id="messages" closable="true"/>
+            <h:inputHidden value="#{pedidoBean.pedido.codigo}"/>
+
+            <p:panel header="Pedidos">
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Nome: " for="nome"/>
+                    <p:inputText id="nome" size="50" value="#{pedidoBean.pedido.nome}" required="true" requiredMessage="É necessário informar o nome"/>
+
+                    <p:outputLabel value="Telefone: " for="telefone"/>
+                    <p:inputMask id="telefone" value="#{pedidoBean.pedido.telefone}" mask="(99) 9999-9999" required="true" requiredMessage="É necessário informar um telefone para contato"/>
+
+                    <p:outputLabel value="Pedido: " for="pedido"/>
+                    <p:inputTextarea id="pedido" value="#{pedidoBean.pedido.pedido}" cols="50" rows="10" required="true" requiredMessage="É necessário informar descrever o pedido"/>
+
+                    <p:outputLabel value="Data de Entrega: " for="dtEntrega"/>
+                    <p:calendar id="dtEntrega" value="#{pedidoBean.pedido.dataEntrega}" required="true" requiredMessage="É necessário informar a Data de Entrega do pedido"/>
+
+                    <p:panel>
+                        <p:commandButton ajax="false" value="Salvar" action="#{pedidoBean.insere}"/>
+                        <p:commandButton value="Cancelar" type="reset"/>
+                    </p:panel>
+                </p:panelGrid>
+            </p:panel>
+
+        </h:form>
+    </ui:define>
+</ui:composition>

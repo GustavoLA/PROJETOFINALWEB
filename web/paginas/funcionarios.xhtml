@@ -39,14 +39,20 @@
             </p:dataTable>
         </h:form>
 
-        <p:dialog header="Detalhe Funcionário" widgetVar="funcionarioDialog" resizable="false" id="funcionarioDlg" dynamic="true" appendTo="@(body)" showEffect="fade" hideEffect="explode" modal="true">
+        <p:dialog header="Detalhe Funcionário" widgetVar="funcionarioDialog"
+                  resizable="false" id="funcionarioDlg" dynamic="true" 
+                  appendTo="@(body)" showEffect="fade" hideEffect="explode" 
+                  modal="true">
             <h:form id="formDialog">
-                <h:panelGrid id="display" columns="2" cellpadding="4" style="margin:0 auto;">
+                <h:panelGrid id="display" columns="2" cellpadding="4"
+                             style="margin:0 auto;">
                     <h:outputText value="Código: " />
-                    <h:outputText value="#{funcionarioBean.funcionario.codigo}" style="font-weight:bold" />
+                    <h:outputText value="#{funcionarioBean.funcionario.codigo}"
+                                  style="font-weight:bold" />
 
                     <h:outputText value="Nome: " />  
-                    <h:outputText value="#{funcionarioBean.funcionario.nome}" style="font-weight:bold"/>  
+                    <h:outputText value="#{funcionarioBean.funcionario.nome}" 
+                                  style="font-weight:bold"/>  
                 </h:panelGrid>
             </h:form>
         </p:dialog>
