@@ -1,0 +1,34 @@
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+    <h:form>
+        <p:panelMenu style="width: 100%;">
+            <p:submenu label="Administração">
+                <p:menuitem value="Cargos" url="/faces/paginas/cargos.xhtml"/>
+                <p:menuitem value="Funcionários" url="/faces/paginas/funcionarios.xhtml"/>
+            </p:submenu>
+
+            <p:submenu label="Recrutamento e Seleção">
+                <p:menuitem value="Banco de currículos" url="#"/>
+                <p:menuitem value="Avaliações" url="#"/>
+                <p:menuitem value="Processos seletivos" url="#"/>
+
+            </p:submenu>
+
+            <p:submenu label="Serviços">
+                <p:menuitem value="Treinamento e desenvolvimento" url="#"/>
+                <p:menuitem value="Folha de pagamento" url="#"/>
+                <p:menuitem value="Ponto eletrônico" url="#"/>
+                <p:menuitem value="Gestão de benefícios" url="#"/>                
+            </p:submenu>
+
+            <p:submenu label="Relatórios gerenciais">
+                <p:menuitem value="Rotatividade" url="#"/>
+                <p:menuitem value="Produtividade" url="#"/>
+                <p:menuitem value="Custo" url="#"/>
+            </p:submenu>
+
+        </p:panelMenu>
+    </h:form>
+</ui:composition>

@@ -1,0 +1,66 @@
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="../WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="conteudo">
+        <h:form acceptcharset="ISO-8859" id="form">
+
+            <p:dataTable id="tabela" var="cargo" value="#{cargoBean.cargos}" rows="6" paginator="true">
+                <f:facet name="header">Cargos</f:facet>
+
+                <p:column headerText="Código" sortBy="#{cargo.codigo}">
+                    <h:outputText value="#{cargo.codigo}"/>
+                </p:column>
+
+                <p:column headerText="Nome" sortBy="#{cargo.nome}">
+                    <h:outputText value="#{cargo.nome}"/>
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <p:commandButton action="/faces/paginas/cargo.xhtml" icon="ui-icon-plusthick"/>
+                    </f:facet>
+
+                    <p:commandButton id="botaoSelecao" update=":formDialog:display" 
+                                     oncomplete="PF('cargoDialog').show()" 
+                                     icon="ui-icon-search" 
+                                     title="View">
+                        <f:setPropertyActionListener value="#{cargo}" 
+                                                     target="#{cargoBean.cargo}"/>
+                    </p:commandButton>
+
+                    <p:commandButton action="#{cargoBean.preparaAlteracao}" icon="ui-icon-pencil">
+                        <f:setPropertyActionListener value="#{cargo}" target="#{cargoBean.cargo}"/>
+                    </p:commandButton>
+
+                    <p:commandButton action="#{cargoBean.remove}" icon="ui-icon-closethick" update="tabela">
+                        <f:setPropertyActionListener value="#{cargo}" target="#{cargoBean.cargo}"/>
+                    </p:commandButton>
+                </p:column>
+            </p:dataTable>
+
+        </h:form>
+
+        <p:dialog header="Detalhe Cargo" widgetVar="cargoDialog"
+                  resizable="false" id="cargoDlg" dynamic="true" 
+                  appendTo="@(body)" showEffect="fade" hideEffect="explode" 
+                  modal="true">
+            <h:form id="formDialog">
+                <h:panelGrid id="display" columns="2" cellpadding="4"
+                             style="margin:0 auto;">
+                    <h:outputText value="Código: " />
+                    <h:outputText value="#{cargoBean.cargo.codigo}"
+                                  style="font-weight:bold" />
+
+                    <h:outputText value="Cargo: " />  
+                    <h:outputText value="#{cargoBean.cargo.nome}" 
+                                  style="font-weight:bold"/>  
+
+                </h:panelGrid>
+            </h:form>
+        </p:dialog>
+
+    </ui:define>
+</ui:composition>

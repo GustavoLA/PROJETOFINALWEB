@@ -1,0 +1,30 @@
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="../WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="conteudo">
+        <h:form acceptcharset="ISO-8859-l">
+            <p:messages id="messages" closable="true"/>
+            <h:inputHidden value="#{cargoBean.cargo.codigo}"/>
+            
+            <p:panel header="Cadastro de Cargo">
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Nome: " for="nome"/>
+                    <p:inputText id="nome" size="50" value="#{cargoBean.cargo.nome}" required="true" requiredMessage="É necessário informar o nome do cargo"/>
+
+                    <p:outputLabel value="Descrição: " for="descricao"/>
+                    <p:inputTextarea id="descricao" value="#{cargoBean.cargo.descricao}" cols="50" rows="10" required="true" requiredMessage="É necessário informar uma descrição para o cargo"/>
+                    <br/>
+
+                    <p:panel>
+                        <p:commandButton ajax="false" value="Salvar" action="#{cargoBean.insere}"/>
+                        <p:commandButton value="Cancelar" type="reset"/>
+                    </p:panel>
+                </p:panelGrid>
+            </p:panel>
+            
+        </h:form>
+    </ui:define>
+</ui:composition>

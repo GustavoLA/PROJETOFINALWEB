@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title> Gestão de Recursos Humanos </title>
+        <h:outputStylesheet library="css" name="style.css"/>
+    </h:head>
+
+    <body>
+        <p:layout fullPage="true">
+
+            <p:layoutUnit position="north" size="20%" header="Gestão de Recursos Humanos">
+                <p:graphicImage library="img" name="logo.png"/>
+            </p:layoutUnit>
+
+
+
+            <p:layoutUnit position="center">
+
+                <h:form>
+                    <p:messages/>
+                    <p:panelGrid columns="1">
+                        <p:inputText value="#{loginBean.login}"
+                                     id="login"
+                                     pt:placeholder="Login"/>
+                        <br/>
+
+                        <p:password value="#{loginBean.senha}"
+                                    id="senha"
+                                    pt:placeholder="Senha"/>
+                        <br/>
+                        <p:commandButton value="Ok"
+                                         action="#{loginBean.autentica}"
+                                         styleClass="botaoLogin"/>               
+                    </p:panelGrid>
+                </h:form>
+
+            </p:layoutUnit>
+
+        </p:layout>
+    </body>
+</html>
