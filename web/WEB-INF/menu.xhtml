@@ -3,14 +3,12 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:p="http://primefaces.org/ui">
     <h:form>
-        <p:panelMenu style="width: 100%;">
-            <p:submenu label="Acesso restrito">
-                <p:menuitem value="Cargos" url="/faces/paginas/cargos.xhtml"/>
-                <p:menuitem value="Funcionários" url="/faces/paginas/funcionarios.xhtml"/>
-                <p:menuitem value="Pedidos" url="/faces/paginas/pedidos.xhtml"/>
-            </p:submenu>
 
-            <p:submenu label="Livre">
+        <p:commandButton value="Ínicio" action="/faces/index" style="width: 100%"/>
+
+        <p:panelMenu style="width: 100%;">
+
+            <p:submenu label="Acesso Livre">
                 <p:menuitem value="Quem Somos" url="/faces/paginas/quemsomos.xhtml"/>
                 <p:menuitem value="FAQ" url="/faces/paginas/faq.xhtml"/>
                 <p:menuitem value="Contato" url="/faces/paginas/contato.xhtml"/> 
@@ -18,6 +16,12 @@
 
             <p:submenu label="Serviços">
                 <p:menuitem value="Faça seu pedido" url="/faces/paginas/pedido.xhtml"/>
+            </p:submenu>
+
+            <p:submenu label="Acesso restrito">
+                <p:menuitem value="Cargos" url="/faces/paginas/cargos.xhtml"/>
+                <p:menuitem value="Funcionários" url="/faces/paginas/funcionarios.xhtml"/>
+                <p:menuitem value="Pedidos" url="/faces/paginas/pedidos.xhtml"/>
             </p:submenu>
 
             <p:submenu label="Relatórios gerenciais">

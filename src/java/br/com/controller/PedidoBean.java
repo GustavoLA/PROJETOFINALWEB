@@ -24,7 +24,7 @@ public class PedidoBean {
         PedidoDAO dao = new PedidoDAOJPA(manager);
         dao.salvar(pedido);
         this.pedido = null;
-        return "/paginas/obrigado.xhtml";
+        return "/index.xhtml";
     }
 
     public String preparaAlteracao() {

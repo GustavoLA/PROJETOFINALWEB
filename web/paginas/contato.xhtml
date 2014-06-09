@@ -5,6 +5,41 @@
                 xmlns:p="http://primefaces.org/ui">
 
     <ui:define name="conteudo">
-contato
+
+        <h:form acceptcharset="ISO-8859-l">
+            <p:panel header="Contato">
+
+                <p:outputLabel value="Entre em contato conosco por telefone ou fax!"/>
+                <br/>
+                <br/>
+                <p:outputLabel value="Telefone: (12) 3422-2345"/>
+                <br/>
+                <p:outputLabel value="Fax: (12) 2344-4567"/>
+                <br/>
+                <br/>
+                <br/>
+                <p:outputLabel value="Ou mande um email para nós!"/>
+                <br/>
+                <br/>
+                <p:outputLabel value="contato@empresa.net"/>
+                <br/>
+                <br/>
+                <br/>
+                <p:outputLabel value="Ou você pode mandar uma Carta para esse endereço!!"/>
+                <br/>
+                <br/>
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Rua: Arlindo Costa"/>
+                    <p:outputLabel value="Número: 48"/>
+                    <p:outputLabel value="Complemento: Casa"/>
+                    <p:outputLabel value="Cidade: Costa Ricca"/>
+                    <p:outputLabel value="Estado: SC"/>
+                    <p:outputLabel value="Páis: Brasil"/>
+                </p:panelGrid>
+                <br/>
+                <br/>
+                <p:outputLabel value="* Ou nos mande um sinal de fumaça! (verificar condições climáticas)"/>         
+            </p:panel>
+        </h:form>
     </ui:define>
 </ui:composition>

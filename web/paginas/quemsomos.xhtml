@@ -5,7 +5,12 @@
                 xmlns:p="http://primefaces.org/ui">
 
     <ui:define name="conteudo">
-QUEM SOMOS
+        QUEM SOMOS 
+
+        <p:galleria value="#{imagesView.images}" var="image" panelWidth="500" panelHeight="313" showCaption="true">
+            <p:graphicImage library="image" name="07.jpg" alt="Descrição de imagem para #{image}" title="#{image}"/>
+        </p:galleria>
+
     </ui:define>
 </ui:composition>
 
