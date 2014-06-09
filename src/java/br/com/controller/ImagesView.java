@@ -18,7 +18,7 @@ public class ImagesView {
     public void init() {
         images = new ArrayList<String>();
         for (int i = 1; i <= 7; i++) {
-            images.add("Imgaem" + i + ".jpg");
+            images.add("0" + i + ".jpg");
         }
     }
 

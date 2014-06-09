@@ -65,7 +65,7 @@ public class ControleAcessoFilter implements Filter {
                 && !url.contains("pedido.xhtml")
                 && !url.contains("faq.xhtml")
                 && !url.contains("contato.xhtml")
-                && !url.contains("quemsomos.xhtml")
+                && !url.contains("imagens.xhtml")
                 && !url.contains("index.xhtml")
                 && !url.contains("javax.faces.resource");
     }
